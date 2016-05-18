@@ -51,13 +51,14 @@
                         android:gravity="center_vertical" />
 
                     <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        android:layout_width="140dp"
+                        android:layout_height="140dp"
                         android:id="@+id/imageViewL"
                         android:minHeight="140dp"
                         android:minWidth="140dp"
                         android:maxHeight="140dp"
-                        android:maxWidth="140dp" />
+                        android:maxWidth="140dp"
+                        android:adjustViewBounds="true" />
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -122,13 +123,14 @@
                     android:gravity="center_vertical" />
 
                 <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_width="140dp"
+                    android:layout_height="140dp"
                     android:id="@+id/imageViewR"
                     android:minHeight="140dp"
                     android:minWidth="140dp"
                     android:maxHeight="140dp"
-                    android:maxWidth="140dp" />
+                    android:maxWidth="140dp"
+                    android:adjustViewBounds="true" />
 
                 <TextView
                     android:layout_width="wrap_content"

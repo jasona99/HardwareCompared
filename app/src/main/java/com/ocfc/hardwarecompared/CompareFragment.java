@@ -102,6 +102,16 @@ public class CompareFragment extends Fragment {
                 if (pos == 16){ //370
                     setText1("114 fps", "73.3 fps", "60.8 fps", "$130", "110W");
                 }
+                if (pos >=0 && pos < 7) {
+                    ImageView imgL = (ImageView)(getView().findViewById(R.id.imageViewL));
+                    imgL.setBackgroundResource(R.drawable.nvidia);
+
+                }
+                if (!(pos >=0 && pos < 7)) {
+                    ImageView imgL = (ImageView)(getView().findViewById(R.id.imageViewL));
+                    imgL.setBackgroundResource(R.drawable.amd);
+
+                }
 
             }
 
@@ -170,7 +180,12 @@ public class CompareFragment extends Fragment {
                 }
                 if (pos >=0 && pos < 7) {
                     ImageView imgR = (ImageView)(getView().findViewById(R.id.imageViewR));
-                    imgR.setBackground(Drawable.createFromPath("@drawable/nvidia.png"));
+                    imgR.setBackgroundResource(R.drawable.nvidia);
+
+                }
+                if (!(pos >=0 && pos < 7)) {
+                    ImageView imgR = (ImageView)(getView().findViewById(R.id.imageViewR));
+                    imgR.setBackgroundResource(R.drawable.amd);
 
                 }
 
