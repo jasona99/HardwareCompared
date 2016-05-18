@@ -8,4 +8,25 @@
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="country_prompt">Choose a country</string>
+
+    <string-array name="gpu_list">
+        <item>-NVIDIA-</item>
+        <item>GTX Titan X</item>
+        <item>GTX 980 Ti</item>
+        <item>GTX 980</item>
+        <item>GTX 970</item>
+        <item>GTX 960</item>
+        <item>GTX 950</item>
+        <item>-AMD-</item>
+        <item>R9 Fury X</item>
+        <item>R9 Fury</item>
+        <item>R9 Nano</item>
+        <item>R9 390X</item>
+        <item>R9 390</item>
+        <item>R9 380X</item>
+        <item>R9 380</item>
+        <item>R9 370X</item>
+        <item>R9 370</item>
+    </string-array>
 </resources>
