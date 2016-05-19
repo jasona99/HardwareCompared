@@ -9,6 +9,8 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="country_prompt">Choose a country</string>
+    <string name="motherboard">Motherboard</string>
+    <string name="ram">RAM</string>
 
     <string-array name="gpu_list">
         <item>-NVIDIA-</item>
