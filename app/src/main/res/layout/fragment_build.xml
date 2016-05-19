@@ -1,22 +1,143 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.ocfc.hardwarecompared.BuildFragment"
     android:background="?android:attr/colorBackground">
 
-    <!-- TODO: Update blank fragment layout -->
-
 
     <ScrollView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/scrollView2" />
+        android:id="@+id/scrollView2" >
 
-    <ListView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/listView"
-        android:layout_gravity="left|top" />
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
 
-</FrameLayout>
+            <ToggleButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="ToggleButton1"
+                android:id="@+id/toggleCPU"
+                android:textOff="Intel"
+                android:textOn="AMD"
+                android:layout_below="@+id/textView3"
+                android:layout_alignParentEnd="true" />
+
+            <SeekBar
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/seekCPU"
+                android:max="500"
+                android:layout_below="@+id/textView3"
+                android:layout_alignParentStart="true"
+                android:layout_alignBottom="@+id/toggleCPU"
+                android:layout_toStartOf="@+id/toggleCPU" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="Medium Text"
+                android:id="@+id/textView"
+                android:paddingBottom="20dp"
+                android:paddingTop="20dp"
+                android:layout_alignTop="@+id/textView2"
+                android:layout_alignParentStart="true" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="Medium Text"
+                android:id="@+id/textView2"
+                android:paddingTop="20dp"
+                android:paddingBottom="20dp"
+                android:layout_below="@+id/toggleCPU"
+                android:layout_alignParentRight="true" />
+
+            <SeekBar
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/seekGPU"
+                android:max="1200"
+                android:layout_below="@+id/textView5"
+                android:layout_alignParentStart="true"
+                android:layout_alignBottom="@+id/toggleButton"
+                android:layout_toStartOf="@+id/toggleButton" />
+
+            <ToggleButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="ToggleGPU"
+                android:id="@+id/toggleButton"
+                android:textOff="NVIDIA"
+                android:textOn="AMD"
+                android:layout_below="@+id/textView5"
+                android:layout_alignParentEnd="true" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text="CPU Selection"
+                android:id="@+id/textView3"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentStart="true" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text="GPU Selection"
+                android:id="@+id/textView5"
+                android:layout_below="@+id/textView"
+                android:layout_alignParentStart="true" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="Medium Text"
+                android:id="@+id/textView6"
+                android:paddingBottom="20dp"
+                android:paddingTop="20dp"
+                android:layout_below="@+id/seekGPU"
+                android:layout_alignParentStart="true" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="Medium Text"
+                android:id="@+id/textView8"
+                android:paddingTop="20dp"
+                android:paddingBottom="20dp"
+                android:layout_below="@+id/seekGPU"
+                android:layout_alignEnd="@+id/toggleButton" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="Price: $"
+                android:id="@+id/textView9"
+                android:layout_alignBottom="@+id/textView2"
+                android:layout_toStartOf="@+id/textView2"
+                android:paddingTop="20dp"
+                android:paddingBottom="20dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="Price: $"
+                android:id="@+id/textView10"
+                android:paddingTop="20dp"
+                android:paddingBottom="20dp"
+                android:layout_below="@+id/seekGPU"
+                android:layout_toStartOf="@+id/textView8" />
+        </RelativeLayout>
+    </ScrollView>
+</RelativeLayout>
