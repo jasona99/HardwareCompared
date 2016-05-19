@@ -30,9 +30,10 @@
                     android:textAppearance="?android:attr/textAppearanceLarge"
                     android:text="CPU Cooler"
                     android:id="@+id/textView16"
-                    android:layout_alignBaseline="@+id/spinner"
-                    android:layout_alignBottom="@+id/spinner"
-                    android:layout_alignEnd="@+id/textView13" />
+                    android:layout_alignBaseline="@+id/spinnerRAM"
+                    android:layout_alignBottom="@+id/spinnerRAM"
+                    android:layout_alignEnd="@+id/textView13"
+                    android:paddingTop="20dp" />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -240,7 +241,8 @@
                     android:text="Storage"
                     android:id="@+id/textView13"
                     android:layout_alignParentTop="true"
-                    android:layout_alignParentStart="true" />
+                    android:layout_alignParentStart="true"
+                    android:paddingBottom="10dp" />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -248,8 +250,6 @@
                     android:textAppearance="?android:attr/textAppearanceMedium"
                     android:text="Number of hard disk drives (any size):"
                     android:id="@+id/textView14"
-                    android:paddingTop="10dp"
-                    android:paddingBottom="20dp"
                     android:layout_below="@+id/textView13"
                     android:layout_alignParentStart="true" />
 
@@ -259,30 +259,29 @@
                     android:textAppearance="?android:attr/textAppearanceMedium"
                     android:text="Number of solid state drives (any size):"
                     android:id="@+id/textView15"
-                    android:paddingTop="10dp"
-                    android:paddingBottom="20dp"
                     android:layout_below="@+id/textView14"
                     android:layout_alignParentStart="true" />
 
                 <Spinner
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:id="@+id/spinner2"
+                    android:id="@+id/spinnerHDD"
                     android:layout_below="@+id/relativeLayout"
                     android:layout_toEndOf="@+id/textView15"
-                    android:layout_above="@+id/spinner3"
-                    android:paddingTop="10dp"
-                    android:paddingBottom="20dp" />
+                    android:layout_above="@+id/spinnerSSD"
+                    android:paddingTop="0dp"
+                    android:paddingBottom="0dp"
+                    android:layout_alignParentLeft="false"
+                    android:layout_alignParentRight="true" />
 
                 <Spinner
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:id="@+id/spinner3"
+                    android:id="@+id/spinnerSSD"
                     android:layout_below="@+id/textView14"
                     android:layout_toEndOf="@+id/textView15"
                     android:layout_alignBottom="@+id/textView15"
-                    android:paddingTop="10dp"
-                    android:paddingBottom="20dp" />
+                    android:layout_alignParentRight="true" />
 
             </RelativeLayout>
 
@@ -301,8 +300,8 @@
                     android:id="@+id/textView12"
                     android:layout_below="@+id/textView8"
                     android:layout_alignParentStart="true"
-                    android:paddingTop="10dp"
-                    android:paddingBottom="20dp" />
+                    android:paddingTop="0dp"
+                    android:paddingBottom="0dp" />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -316,11 +315,11 @@
                 <Spinner
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:id="@+id/spinner"
+                    android:id="@+id/spinnerRAM"
                     android:layout_alignTop="@+id/textView12"
                     android:layout_toEndOf="@+id/textView12"
-                    android:paddingTop="10dp"
-                    android:paddingBottom="20dp" />
+                    android:paddingTop="0dp"
+                    android:paddingBottom="0dp" />
             </RelativeLayout>
 
             <RelativeLayout
@@ -329,7 +328,8 @@
                 android:layout_below="@+id/relativeLayout3"
                 android:layout_alignParentStart="true"
                 android:layout_alignParentEnd="true"
-                android:id="@+id/relativeLayout5">
+                android:id="@+id/relativeLayout5"
+                android:paddingTop="20dp">
 
                 <TextView
                     android:layout_width="wrap_content"
