@@ -21,8 +21,7 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/relativeLayout"
                 android:layout_alignParentStart="true"
-                android:layout_alignParentEnd="true"
-                android:layout_alignParentBottom="true">
+                android:id="@+id/relativeLayout6">
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -97,7 +96,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="ToggleGPU"
-                    android:id="@+id/toggleButton"
+                    android:id="@+id/toggleGPU"
                     android:textOff="NVIDIA"
                     android:textOn="AMD"
                     android:layout_below="@+id/textView5"
@@ -110,7 +109,7 @@
                     android:text="GPU Selection"
                     android:id="@+id/textView5"
                     android:layout_alignParentStart="true"
-                    android:layout_alignTop="@+id/textView2" />
+                    android:layout_alignTop="@+id/textCPUPrice" />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -121,7 +120,7 @@
                     android:paddingTop="20dp"
                     android:paddingBottom="20dp"
                     android:layout_below="@+id/seekGPU"
-                    android:layout_alignEnd="@+id/toggleButton" />
+                    android:layout_alignEnd="@+id/toggleGPU" />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -139,10 +138,10 @@
                     android:layout_height="wrap_content"
                     android:id="@+id/seekGPU"
                     android:max="1200"
-                    android:layout_below="@+id/textView5"
                     android:layout_alignParentStart="true"
-                    android:layout_alignBottom="@+id/toggleButton"
-                    android:layout_toStartOf="@+id/toggleButton" />
+                    android:layout_alignBottom="@+id/toggleGPU"
+                    android:layout_toStartOf="@+id/toggleGPU"
+                    android:layout_below="@+id/textView5" />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -196,8 +195,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textAppearance="?android:attr/textAppearanceMedium"
-                    android:text="Medium Text"
-                    android:id="@+id/textView2"
+                    android:text="0"
+                    android:id="@+id/textCPUPrice"
                     android:paddingTop="20dp"
                     android:paddingBottom="20dp"
                     android:layout_below="@+id/toggleCPU"
@@ -208,7 +207,7 @@
                     android:layout_height="wrap_content"
                     android:textAppearance="?android:attr/textAppearanceMedium"
                     android:text="Medium Text"
-                    android:id="@+id/textCPUPrice"
+                    android:id="@+id/textCPUName"
                     android:paddingBottom="20dp"
                     android:paddingTop="18dp"
                     android:layout_below="@+id/seekCPU"
@@ -220,10 +219,16 @@
                     android:textAppearance="?android:attr/textAppearanceMedium"
                     android:text="Price: $"
                     android:id="@+id/textView9"
-                    android:layout_alignBottom="@+id/textView2"
-                    android:layout_toStartOf="@+id/textView2"
+                    android:layout_alignBottom="@+id/textCPUPrice"
+                    android:layout_toStartOf="@+id/textCPUPrice"
                     android:paddingTop="20dp"
                     android:paddingBottom="20dp" />
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentTop="true"></RelativeLayout>
 
             </RelativeLayout>
 
@@ -238,11 +243,12 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textAppearance="?android:attr/textAppearanceLarge"
-                    android:text="Storage"
+                    android:text="Storage   "
                     android:id="@+id/textView13"
                     android:layout_alignParentTop="true"
                     android:layout_alignParentStart="true"
-                    android:paddingBottom="10dp" />
+                    android:paddingBottom="10dp"
+                    android:singleLine="true" />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -282,6 +288,72 @@
                     android:layout_toEndOf="@+id/textView15"
                     android:layout_alignBottom="@+id/textView15"
                     android:layout_alignParentRight="true" />
+
+                <SeekBar
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/seekBarHDD"
+                    android:paddingTop="5dp"
+                    android:layout_alignTop="@+id/textView"
+                    android:layout_above="@+id/textSSDSize"
+                    android:layout_toEndOf="@+id/textView13"
+                    android:layout_alignStart="@+id/seekBarHDD"
+                    android:layout_toStartOf="@+id/textSSDSize"
+                    android:indeterminate="false" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:text="HDD Sizes"
+                    android:id="@+id/textView"
+                    android:layout_centerVertical="true"
+                    android:layout_below="@+id/textView15"
+                    android:layout_toStartOf="@+id/seekBarHDD"
+                    android:layout_toRightOf="@+id/seekBarHDD"
+                    android:layout_alignParentLeft="true"
+                    android:singleLine="true"
+                    android:layout_alignEnd="@+id/textView13" />
+
+                <SeekBar
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/seekBarSSD"
+                    android:paddingTop="5dp"
+                    android:layout_below="@+id/seekBarHDD"
+                    android:layout_alignStart="@+id/seekBarHDD"
+                    android:layout_toStartOf="@+id/textSSDSize"
+                    android:indeterminate="false" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:text="SSD Sizes"
+                    android:id="@+id/textView26"
+                    android:singleLine="true"
+                    android:layout_below="@+id/textView"
+                    android:layout_alignParentLeft="true" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:text="Size      "
+                    android:id="@+id/textSSDSize"
+                    android:singleLine="true"
+                    android:layout_below="@+id/textView"
+                    android:layout_alignEnd="@+id/spinnerSSD" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:text="Size      "
+                    android:id="@+id/textHDDSize"
+                    android:singleLine="true"
+                    android:layout_alignTop="@+id/seekBarHDD"
+                    android:layout_alignEnd="@+id/spinnerSSD" />
 
             </RelativeLayout>
 
@@ -325,11 +397,11 @@
             <RelativeLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/relativeLayout3"
                 android:layout_alignParentStart="true"
                 android:layout_alignParentEnd="true"
                 android:id="@+id/relativeLayout5"
-                android:paddingTop="20dp">
+                android:paddingTop="20dp"
+                android:layout_below="@+id/relativeLayout3">
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -362,6 +434,40 @@
                     android:layout_alignParentStart="true"
                     android:paddingTop="10dp" />
 
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@+id/relativeLayout6"
+                android:layout_alignParentStart="true">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:text="Estimated Price"
+                    android:id="@+id/textView2"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentStart="true" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:text="Price"
+                    android:id="@+id/textPrice"
+                    android:layout_below="@+id/textView2"
+                    android:layout_toEndOf="@+id/textView27" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:text="$"
+                    android:id="@+id/textView27"
+                    android:layout_below="@+id/textView2"
+                    android:layout_alignParentStart="true" />
             </RelativeLayout>
         </RelativeLayout>
     </ScrollView>
