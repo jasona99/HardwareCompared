@@ -93,11 +93,19 @@ public class BuildFragment extends Fragment {
 
         seekGPU.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             int progress = 0;
-
+            boolean tempB;
             @Override
             public void onProgressChanged(SeekBar seekBar, int progressValue, boolean fromUser) {
                 progress = progressValue;
+
                 textGPU.setText(progress + "");
+                if (toggleCPU.getText().equals("AMD")){
+                    tempB = true;
+                }
+                if (toggleCPU.getText().equals("Intel")){
+                    tempB = false;
+                }
+                GPUCalc(progress, tempB, textGPUN);
 
 
             }
@@ -158,7 +166,10 @@ public class BuildFragment extends Fragment {
     }
     private void GPUCalc(int progress, boolean CPUBrand, TextView textGPUN) {
         if (CPUBrand ==true){
-            textGPUN.setText("AMD");
+            textGPUN.setText(progress);
+            if (progress > 400){
+                textGPUN.setText("R9 Fury - $400");
+            }
         }
         if (CPUBrand ==false){
             textGPUN.setText("NVIDIA");
