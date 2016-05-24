@@ -6,6 +6,7 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.CompoundButton;
 import android.widget.SeekBar;
@@ -24,6 +25,7 @@ public class BuildFragment extends Fragment {
     private int wattsGPU;
     private int wattsCPU;
     private int costCPU;
+    private int wattsCooler;
 
     public BuildFragment() {
         // Required empty public constructor
@@ -44,7 +46,10 @@ public class BuildFragment extends Fragment {
         final SeekBar seekGPU = (SeekBar) view.findViewById(R.id.seekGPU);
         final ToggleButton toggleCPU = (ToggleButton) view.findViewById(R.id.toggleCPU);
         final ToggleButton toggleGPU = (ToggleButton) view.findViewById(R.id.toggleGPU);
-        ToggleButton toggleCooler = (ToggleButton) view.findViewById(R.id.toggleCooler);
+        final ToggleButton toggleCooler = (ToggleButton) view.findViewById(R.id.toggleCooler);
+        final Spinner spinnerRAM = (Spinner) view.findViewById(R.id.spinnerRAM);
+        final Spinner spinnerHDD = (Spinner) view.findViewById(R.id.spinnerHDD);
+        final Spinner spinnerSSD = (Spinner) view.findViewById(R.id.spinnerSSD);
         boolean CPUBrand = false;
         boolean GPUBrand = false;
         final TextView totalWattage = (TextView) view.findViewById(R.id.textWattage);
@@ -52,7 +57,8 @@ public class BuildFragment extends Fragment {
         costGPU = 0;
         costCPU = 0;
         wattsCPU = 0;
-        totalWattage.setText((wattsGPU)+"");
+        wattsCooler = 0;
+        totalWattage.setText((wattsGPU+wattsCPU+40+wattsCooler)+"");
         final TextView chipset = (TextView) view.findViewById(R.id.textMBChipset);
 
         // CPU Stuff
@@ -154,6 +160,7 @@ public class BuildFragment extends Fragment {
             }
         });
 
+
         return view;
     }
 
@@ -177,6 +184,7 @@ public class BuildFragment extends Fragment {
 
     private void CPUCalc(int progress, boolean CPUBrand, TextView textCPUN, View view) {
         final TextView chipset = (TextView) view.findViewById(R.id.textMBChipset);
+        final TextView totalWattage = (TextView) view.findViewById(R.id.textWattage);
         if (CPUBrand ==true){
             textCPUN.setText("AMD");
             if (progress >= 90 && progress < 125){
@@ -251,6 +259,7 @@ public class BuildFragment extends Fragment {
                 chipset.setText("Intel X99");
             }
         }
+        totalWattage.setText((wattsGPU+wattsCPU+40+wattsCooler)+"");
     }
     private void GPUCalc(int progress, boolean GPUBrand, TextView textGPUN, View view) {
         final TextView totalWattage = (TextView) view.findViewById(R.id.textWattage);
@@ -325,7 +334,7 @@ public class BuildFragment extends Fragment {
                 wattsGPU = 90;
             }
         }
-        totalWattage.setText((wattsGPU)+"");
+        totalWattage.setText((wattsGPU+wattsCPU+40+wattsCooler)+"");
     }
     private void SSDCalc(int num, int size){
 
