@@ -185,7 +185,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:id="@+id/seekCPU"
-                    android:max="500"
+                    android:max="1200"
                     android:layout_below="@+id/textView3"
                     android:layout_alignParentStart="true"
                     android:layout_alignBottom="@+id/toggleCPU"
@@ -382,7 +382,8 @@
                     android:text="@string/ram"
                     android:id="@+id/textView8"
                     android:layout_alignParentTop="true"
-                    android:layout_alignParentStart="true" />
+                    android:layout_alignParentStart="true"
+                    android:paddingBottom="10dp" />
 
                 <Spinner
                     android:layout_width="wrap_content"
@@ -449,7 +450,9 @@
                     android:text="Estimated Price"
                     android:id="@+id/textView2"
                     android:layout_alignParentTop="true"
-                    android:layout_alignParentStart="true" />
+                    android:layout_alignParentStart="true"
+                    android:paddingTop="10dp"
+                    android:paddingBottom="10dp" />
 
                 <TextView
                     android:layout_width="wrap_content"
