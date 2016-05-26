@@ -293,13 +293,12 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:id="@+id/seekBarHDD"
-                    android:paddingTop="5dp"
-                    android:layout_alignTop="@+id/textView"
                     android:layout_above="@+id/textSSDSize"
                     android:layout_toEndOf="@+id/textView13"
                     android:layout_alignStart="@+id/seekBarHDD"
                     android:layout_toStartOf="@+id/textSSDSize"
-                    android:indeterminate="false" />
+                    android:indeterminate="false"
+                    android:max="3" />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -312,28 +311,30 @@
                     android:layout_toStartOf="@+id/seekBarHDD"
                     android:layout_toRightOf="@+id/seekBarHDD"
                     android:layout_alignParentLeft="true"
-                    android:singleLine="true"
-                    android:layout_alignEnd="@+id/textView13" />
+                    android:singleLine="true" />
 
                 <SeekBar
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:id="@+id/seekBarSSD"
-                    android:paddingTop="5dp"
                     android:layout_below="@+id/seekBarHDD"
                     android:layout_alignStart="@+id/seekBarHDD"
                     android:layout_toStartOf="@+id/textSSDSize"
-                    android:indeterminate="false" />
+                    android:indeterminate="false"
+                    android:max="4"
+                    android:layout_toRightOf="@+id/spinnerHDD" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textAppearance="?android:attr/textAppearanceMedium"
-                    android:text="SSD Sizes"
+                    android:text="SSD Sizes "
                     android:id="@+id/textView26"
                     android:singleLine="true"
                     android:layout_below="@+id/textView"
-                    android:layout_alignParentLeft="true" />
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignLeft="@+id/textView"
+                    android:layout_toStartOf="@+id/seekBarSSD" />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -343,7 +344,9 @@
                     android:id="@+id/textSSDSize"
                     android:singleLine="true"
                     android:layout_below="@+id/textView"
-                    android:layout_alignEnd="@+id/spinnerSSD" />
+                    android:layout_alignEnd="@+id/spinnerSSD"
+                    android:layout_alignStart="@+id/textHDDSize"
+                    android:gravity="center_horizontal" />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -353,7 +356,9 @@
                     android:id="@+id/textHDDSize"
                     android:singleLine="true"
                     android:layout_alignTop="@+id/seekBarHDD"
-                    android:layout_alignEnd="@+id/spinnerSSD" />
+                    android:layout_alignEnd="@+id/spinnerSSD"
+                    android:layout_toEndOf="@+id/textView15"
+                    android:gravity="center_horizontal" />
 
             </RelativeLayout>
 
