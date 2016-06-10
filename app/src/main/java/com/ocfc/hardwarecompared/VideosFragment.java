@@ -33,7 +33,7 @@ public class VideosFragment extends Fragment {
         MediaController mediaController;
         mediaController = new MediaController(view.getContext());
         mediaController.setAnchorView(videoView);
-        Uri uri= Uri.parse("rtsp://r3---sn-p5qlsnsr.googlevideo.com/Cj0LENy73wIaNAmJHFypJU6PIhMYDSANFC33lVpXMOCoAUIASARg4eH_zeSxnZZUigELOHpWaFFuM2l2OTQM/78D2C1E485DFFB27AA01BFBF77AD66D3AC546DB8.5269208E21172156935A49A5326441014BC4FDBB/yt6/1/video.3gp");
+        Uri uri= Uri.parse("android.resource://com.ocfc.hardwarecompared/res/hardwarecompared");
         videoView.setMediaController(mediaController);
         videoView.setVideoURI(uri);
         videoView.requestFocus();
