@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/HardwareCompared.iml" filepath="$PROJECT_DIR$/HardwareCompared.iml" />
+      <module fileurl="file://$PROJECT_DIR$/HardwareCompared-0.9.iml" filepath="$PROJECT_DIR$/HardwareCompared-0.9.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
     </modules>
   </component>

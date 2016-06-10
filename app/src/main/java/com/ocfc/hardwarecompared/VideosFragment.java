@@ -29,11 +29,11 @@ public class VideosFragment extends Fragment {
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_videos, container, false);
         VideoView videoView;
-        videoView = (VideoView)view.findViewById(R.id.videoView);
+        videoView= (VideoView)view.findViewById(R.id.videoView);
         MediaController mediaController;
-        mediaController = new MediaController(view.getContext());
+        mediaController= new MediaController(view.getContext());
         mediaController.setAnchorView(videoView);
-        Uri uri= Uri.parse("android.resource://com.ocfc.hardwarecompared/res/hardwarecompared");
+        Uri uri= Uri.parse("android.resource://com.ocfc.hardwarecompared/"+R.raw.hardwarecompared);
         videoView.setMediaController(mediaController);
         videoView.setVideoURI(uri);
         videoView.requestFocus();
